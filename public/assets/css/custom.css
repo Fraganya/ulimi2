@@ -1,0 +1,139 @@
+body{
+    margin:1px;
+    margin-top:1px;
+    border-top:solid 1px #337ab7;
+    background:#fafafa
+}
+.rad-0{
+    border-radius:0px;
+}
+
+.hr-custom{
+    border:solid 2px #337ab7;
+    margin-top:3px;
+    margin-bottom:1px;
+}
+.navbar-custom{
+    margin-bottom:0px;
+}
+.navbar-custom a{
+    color:#fff!important;
+}
+
+.nav-dropdown > li >a {
+     color: #000 !important;
+ }
+.white{
+    color:#fff!important;
+}
+
+.pt-5{
+    padding-top:5px;
+}
+
+.tile{
+    text-align:center;
+    background-color:#0087fdc7;
+    border-color:#bce8f1;
+    cursor: pointer;
+}
+
+.tile:hover{
+    background-color: #0087fd;
+    border-color:#0087fd4d;
+    padding:-30px;
+    color:#fff;
+}
+.tile-icon{
+    font-size:300%;
+}
+
+.box{
+    -webkit-box-shadow: 10px 10px 60px 0px rgba(0,0,0,0.21);
+    -moz-box-shadow: 10px 10px 60px 0px rgba(0,0,0,0.21);
+    box-shadow: 10px 10px 60px 0px rgba(0,0,0,0.21);
+    background-color:#fafafa;
+    padding:10px;
+    margin-top:3px;
+    margin-bottom:0px;
+}
+
+.box .panel{
+    margin-bottom:10px!important;
+}
+
+
+.stat{
+    background-color:#187ace!important;
+    color:#fff;
+    padding:20px;
+}
+.stat .stat-icon{
+    font-size: 200%;
+}
+.tile:hover{
+    cursor:pointer;
+    background-color:rgba(14, 145, 185, 0.719)!important;
+}
+.entity{
+    background-color:#0cbff5;
+    color:#fff;
+    padding:9px;
+    margin-bottom:3px;  
+}
+
+.entity:hover{
+    cursor:pointer;
+    background-color:rgba(14,145,185,0.88);
+}
+
+
+
+
+.panel-error{
+    background-color:#f3403a;
+    color:#fff;
+}
+
+.btn-sm{
+    padding-top:2px!important;
+    padding-bottom:2px!important;
+    line-height:1.4
+}
+
+textarea{
+    resize:none;
+}
+
+
+table .btn{
+    margin-bottom:3px;
+}
+
+
+.navbar .dropdown-menu a{
+    color:#000!important;
+}
+.small-footer hr{
+    margin-bottom:3px;
+    border-color:#187ace;;
+    border-width:2px;
+}
+
+@media only screen and (max-width: 760px){
+    .navbar .dropdown-menu a{
+        color:#fff!important;
+    }
+}
+
+ul.list-group li{
+    border-radius:0px!important;
+}
+
+.m-5{
+    margin:5px;
+}
+
+.btn {
+    border-radius:0px!important;
+}
