@@ -29,6 +29,10 @@ Route::get('login', function () use ($router) {
     return view('login');
 });
 
+Route::get('check-links',function(){
+	return "Getting here";
+});
+
 route::post('login',"Auth\LoginController@login")->name('login');
 route::post('logout',"Auth\LoginController@logout")->name('logout');
 route::post('register',"UserController@register")->name('register');
