@@ -29,9 +29,8 @@ Route::get('login', function () use ($router) {
     return view('login');
 });
 
-Route::get('check-links',function(){
-	return "Getting here";
-});
+
+
 
 route::post('login',"Auth\LoginController@login")->name('login');
 route::post('logout',"Auth\LoginController@logout")->name('logout');
@@ -100,6 +99,14 @@ Route::middleware(['auth'])->group(function(){
      * Market management routes
      */
     Route::resource('market',"MarketItemController");
+
+
+    /**
+     * api test routes
+     */
+    Route::get('api-test',function(){
+        return view('api')->with(['c_page'=>"api"]);
+    });
 
 
 });

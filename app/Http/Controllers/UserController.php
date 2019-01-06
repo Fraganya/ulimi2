@@ -32,15 +32,15 @@ class UserController extends Controller
     public function authenticate(Request $request)
     {
         $username=$request->input('username');
-        $password=bcrypt($request->input('password'));
+        $password=($request->input('password'));
 
-        $user=User::where('username',$username)->where('password',$password)->first();
 
-        if(empty($user)){
+        if(!Auth::attempt(['username'=>$username,'password'=>$password])){
             return json_encode(['status'=>'false','message'=>'Authentication failed']);
         }
 
         //success
+        $user=auth()->user();
         return json_encode(['status'=>'true','user'=>$user]);
     }
 
@@ -62,7 +62,7 @@ class UserController extends Controller
         else{
             //registration via api
             if (User::where('username', $request->username)->first()) {
-                return json_encode(['status' => 'false', 'message' => "Username is already taken"]);
+                return json_encode(['error'=>'true','status' => 'false', 'message' => "Username is already taken"]);
             }
 
 
@@ -77,7 +77,7 @@ class UserController extends Controller
 
 
             if ($validator->fails()) {
-                return json_encode(['status' => 'false', 'message' => "Failed to validate your details"]);
+                return json_encode(['error'=>'true','status' => 'false', 'message' => "Failed to validate your details",'errors'=>$validator->errors()]);
             }
         }
 
@@ -102,7 +102,7 @@ class UserController extends Controller
                     'c_page'=>"status"
                 ]);
             }
-            return json_encode(['status' => 'false', 'message' => "Registration failed"]);
+            return json_encode(['error'=>'true','status' => 'false', 'message' => "Registration failed"]);
         }
 
         if ($request->input('web_access')) {
@@ -112,7 +112,7 @@ class UserController extends Controller
             ]);
         }
 
-        return json_encode(['status' => 'true', 'message' => "Registration successful", 'user' => $user]);
+        return json_encode(['error'=>'false','status' => 'true', 'message' => "Registration successful", 'user' => $user]);
     }
 
 
